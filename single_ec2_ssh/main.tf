@@ -11,7 +11,7 @@ resource "aws_instance" "example" {
 
 resource "aws_key_pair" "auth" {
   key_name   = "test_ssh_key"
-  public_key = "./terraform_sshkey.pub"
+  public_key = "${file("./terraform_sshkey.pub")}"
 }
 
 resource "aws_security_group" "default" {
